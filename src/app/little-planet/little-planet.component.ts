@@ -20,12 +20,13 @@ export class LittlePlanetComponent {
     },
     rotate: {
       easing: EASING.LINEAR,
+      duration: 10000
 
     },
     initialPitch: -90,
     initialZoom: 1.8,
     projection: new LittlePlanetProjection({
-      src: '../../assets/360-2.JPG',
+      src: '../../assets/360-3.JPG',
     })
   }
 }
