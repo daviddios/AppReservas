@@ -1,0 +1,50 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="filter-card mb-4">
+        <h2 class="filter-card-title">Filtrar resultados</h2>
+        <div class="filter-card-content">
+          <form>
+            
+            <div class="form-group">
+              <label for="distance">Distancia (metros)</label>
+              <input type="number" id="distance" class="form-control" [(ngModel)]="distance" name="distance" min="0">
+            </div>
+            <div class="form-group">
+              <label for="keyword">Palabra clave</label>
+              <input type="text" id="keyword" class="form-control" [(ngModel)]="keyword" name="keyword">
+            </div>
+            <div class="form-group">
+              <button class="btn btn-block apply-filters-btn" (click)="applyFilters()">Aplicar filtros</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="services-card">
+        <ng-container *ngIf="showResults">
+        <h2 class="services-card-title">Servicios cercanos</h2>
+        <div class="service-list">
+          <ul class="list-unstyled">
+            <li *ngFor="let place of nearbyPlaces" class="service-item">
+              <div class="service-item-image">
+                <img *ngIf="getPlaceImageUrl(place)" [src]="getPlaceImageUrl(place)" alt="{{place.name}}">
+              </div>
+              <div class="service-item-info">
+                <h3>{{place.name}}</h3>
+                <p>{{place.vicinity}}</p>
+                <a [href]="getPlaceMapUrl(place)" target="_blank" class="btn btn-primary">Ver en el mapa</a>
+              </div>
+            </li>
+          </ul>
+          <div *ngIf="!nearbyPlaces.length" class="no-results-container">
+            <img src="assets/images/search.svg" alt="No se encontraron servicios cercanos">
+            <p class="no-results-text">No se encontraron servicios cercanos.</p>
+          </div>
+        </div>
+      </ng-container>
+      </div>
+    </div>
+  </div>
+</div>
