@@ -1,0 +1,31 @@
+<form class="search-bar" (ngSubmit)="onSearch()">
+    <!-- Búsqueda de servicio -->
+    <mat-form-field appearance="fill" class="search-field">
+      <input matInput placeholder="Buscar servicios..." [(ngModel)]="searchTerm" name="searchTerm" />
+    </mat-form-field>
+  
+    <!-- Selector de servicio -->
+    <mat-form-field appearance="fill">
+      <mat-select placeholder="Servicio" [(ngModel)]="selectedService" name="selectedService">
+        <mat-option *ngFor="let service of services" [value]="service.name">{{ service.name }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  
+    <!-- Selector de fecha -->
+    <mat-form-field appearance="fill" class="search-field">
+      <input matInput [matDatepicker]="picker" placeholder="Fecha" [(ngModel)]="selectedDate" name="selectedDate">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  
+    <!-- Selector de hora -->
+    <mat-form-field appearance="fill" class="search-field">
+      <mat-select placeholder="Hora" [(ngModel)]="selectedTime" name="selectedTime">
+        <mat-option *ngFor="let time of times" [value]="time">{{time}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  
+    <!-- Botón de búsqueda -->
+    <button mat-button type="submit">Buscar</button>
+  </form>
+  

@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { NgxView360Module } from "@egjs/ngx-view360";
+import { MatInputModule } from '@angular/material/input';
+import { SearchBarComponent } from './pages/search-bar/search-bar.component';
 
 
 
@@ -18,7 +20,10 @@ import { NgxView360Module } from "@egjs/ngx-view360";
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    NgxView360Module
+    NgxView360Module,
+    MatInputModule,
+    SearchBarComponent,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
