@@ -19,6 +19,7 @@ export class LittlePlanetComponent {
       delayOnMouseLeave: 0,
     },
     rotate: {
+      pointerScale: [ 50,50 ],
       easing: EASING.LINEAR,
       duration: 10000
 
@@ -26,7 +27,7 @@ export class LittlePlanetComponent {
     initialPitch: -90,
     initialZoom: 1.8,
     projection: new LittlePlanetProjection({
-      src: '../../assets/360-3.JPG',
+      src: '../../assets/360-1.JPG',
     })
   }
 }

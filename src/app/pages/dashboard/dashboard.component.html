@@ -1,1 +1,32 @@
-<p>dashboard works!</p>
+<div class="dashboard">
+    <div class="user-info-card">
+      <h2>Bienvenido, {{ username }}</h2>
+  
+      <div class="appointments">
+        <h3>Mis citas</h3>
+        <ul>
+          <li *ngFor="let appointment of appointments">
+            {{ appointment }}
+          </li>
+        </ul>
+      </div>
+  
+      <div class="notifications">
+        <h3>Notificaciones</h3>
+        <ul>
+          <li *ngFor="let notification of notifications">
+            {{ notification.message }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  
+    <div class="services">
+      <h3>Servicios</h3>
+      <div class="service-card" *ngFor="let service of services">
+        <h4>{{ service.name }}</h4>
+        <p>{{ service.description }}</p>
+      </div>
+    </div>
+  </div>
+  
