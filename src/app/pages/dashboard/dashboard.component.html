@@ -3,34 +3,58 @@
 <!-- Búsqueda -->
 
 <div class="dashboard">
-    <div class="user-info-card">
-      <h2>Bienvenido, {{ username }}</h2>
-  
-      <div class="appointments">
-        <h3>Mis citas</h3>
-        <ul>
-          <li *ngFor="let appointment of appointments">
+  <div class="user-info-card">
+    <h2>Bienvenido, {{ username }}</h2>
+
+    <div class="appointments">
+      <h3>Mis citas</h3>
+      
+      <ul>
+        <li>
+        </li>
+      </ul>
+    </div>
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Proximas Citas
+          </mat-panel-title>
+          <mat-panel-description> {{ appointments.length }}</mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-list>
+          <mat-list-item *ngFor="let appointment of appointments" (click)="onItemClick(appointment)"> 
             {{ appointment }}
-          </li>
-        </ul>
-      </div>
-  
-      <div class="notifications">
-        <h3>Notificaciones</h3>
-        <ul>
-          <li *ngFor="let notification of notifications">
+            <mat-divider></mat-divider>
+          </mat-list-item>
+        </mat-list>
+      </mat-expansion-panel>
+    </mat-accordion>
+<br>
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Notificaciones
+          </mat-panel-title>
+          <mat-panel-description> {{ notifications.length }}</mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-list>
+          <mat-list-item *ngFor="let notification of notifications"> 
             {{ notification.message }}
-          </li>
-        </ul>
-      </div>
-    </div>
-  
-    <div class="services">
-      <h3>Explora</h3>
-      <div class="service-card" *ngFor="let service of services">
-        <h4>{{ service.name }}</h4>
-        <p>{{ service.description }}</p>
-      </div>
-    </div>
+            <mat-divider></mat-divider>
+          </mat-list-item>
+        </mat-list>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+
   </div>
-  
+  <div class="services">
+    <h3>Explora</h3>
+    <div class="service-card"
+      *ngFor="let service of services">
+      <h4>{{ service.name }}</h4>
+      <p>{{ service.description }}</p>
+    </div>
+</div>
