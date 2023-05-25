@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { NgxView360Module } from "@egjs/ngx-view360";
 import { MatInputModule } from '@angular/material/input';
-import { SearchBarComponent } from './pages/search-bar/search-bar.component';
+import { SearchBarComponent } from './shared/search-bar/search-bar.component';
 
 
 

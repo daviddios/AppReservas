@@ -6,9 +6,9 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-import { SearchBarComponent } from "../search-bar/search-bar.component";
+import { SearchBarComponent } from "../../shared/search-bar/search-bar.component";
 import { MatExpansionModule } from '@angular/material/expansion';
-import {MatListModule} from '@angular/material/list'; 
+import {MatListModule} from '@angular/material/list';
 
 interface Notification {
   id: number;
@@ -49,7 +49,7 @@ public times: string[] = ['08:00', '09:00', '10:00', '11:00', '12:00', '13:00', 
 
 ngOnInit(): void {
   this.username = 'Juan Manuel';
-  
+
   // Mock data
   this.appointments = [
     'Cita con el abogado el 1 de mayo',
@@ -57,13 +57,13 @@ ngOnInit(): void {
     'Cita con el peluquero el 5 de mayo',
     // Agrega más citas según sea necesario
   ];
-  
+
   this.notifications = [
     { id: 1, message: 'La reserva en el restaurante ha sido confirmada' },
     { id: 2, message: 'La cita con el abogado ha sido cancelada' },
     // Agrega más notificaciones según sea necesario
   ];
-  
+
   this.services = [
     { id: 1, name: 'Restaurantes', description: 'Reserva una mesa en tu restaurante favorito' },
     { id: 2, name: 'Emplazamientos deportivos', description: 'Reserva una cancha de fútbol o un gimnasio' },

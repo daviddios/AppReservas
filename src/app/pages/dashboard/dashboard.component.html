@@ -2,18 +2,21 @@
 <app-search-bar></app-search-bar>
 <!-- Búsqueda -->
 
+<article class="no-padding border">
+  <img class="responsive small" src="/beer-and-woman.jpg"><!----><!---->
+  <div class="padding">
+    <h5>Title</h5>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <nav>
+      <button>Button</button>
+    </nav>
+  </div>
+</article>
 <div class="dashboard">
   <div class="user-info-card">
     <h2>Bienvenido, {{ username }}</h2>
 
     <div class="appointments">
-      <h3>Mis citas</h3>
-      
-      <ul>
-        <li>
-        </li>
-      </ul>
-    </div>
     <mat-accordion>
       <mat-expansion-panel>
         <mat-expansion-panel-header>
@@ -23,7 +26,7 @@
           <mat-panel-description> {{ appointments.length }}</mat-panel-description>
         </mat-expansion-panel-header>
         <mat-selection-list>
-          <mat-list-option *ngFor="let appointment of appointments" (click)="onItemClick(appointment)"> 
+          <mat-list-option *ngFor="let appointment of appointments" (click)="onItemClick(appointment)">
             <p matLine> {{ appointment }} </p>
             <mat-divider></mat-divider>
           </mat-list-option>
@@ -31,6 +34,8 @@
       </mat-expansion-panel>
     </mat-accordion>
 <br>
+
+
     <mat-accordion>
       <mat-expansion-panel>
         <mat-expansion-panel-header>
@@ -40,7 +45,7 @@
           <mat-panel-description> {{ notifications.length }}</mat-panel-description>
         </mat-expansion-panel-header>
         <mat-list>
-          <mat-list-item *ngFor="let notification of notifications"> 
+          <mat-list-item *ngFor="let notification of notifications">
             {{ notification.message }}
             <mat-divider></mat-divider>
           </mat-list-item>
@@ -48,8 +53,9 @@
       </mat-expansion-panel>
     </mat-accordion>
 
-
+    </div>
   </div>
+    <div class="user-info-card">
   <div class="services">
     <h3>Explora</h3>
     <div class="service-card"
@@ -58,3 +64,4 @@
       <p>{{ service.description }}</p>
     </div>
 </div>
+  </div>
